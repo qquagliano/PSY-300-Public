@@ -1,0 +1,20 @@
+.reveal.smaller .slides h1 {
+  font-size: 65px;
+}
+
+.reveal.smaller .slides h2 {
+  font-size: 55px;
+  text-decoration: underline;
+}
+
+.reveal.smaller .slides h3 {
+  font-size: 45px;
+}
+
+.reveal.smaller .slides h4 {
+  font-size: 40px;
+}
+
+.reveal .footer {
+  color: #0032A0;
+}

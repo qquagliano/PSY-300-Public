@@ -1,0 +1,179 @@
+# SECTION: Overall Opts
+
+title: "Chapter 1 - Scientific Thinking"
+subtitle: "PSY-300: Research Methods in Psychology"
+author: "Quinton Quagliano, M.S., C.S.P."
+institute: "Department of Psychology"
+
+# SECTION: Exec opts
+
+execute:
+  echo: true
+  warning: false
+  message: false
+  eval: true
+  output: true
+  cache: false
+  freeze: false
+
+# SECTION: Language opts
+
+lang: en-US
+
+# SECTION: RevealJS general opts
+
+# NOTE: Numbering and Sectioning
+slide-level: 2
+slide-number: true
+show-slide-number: all
+number-sections: true
+number-depth: 2
+# NOTE: Table-of-contents
+toc: true
+toc-depth: 1
+# NOTE: Rendering
+keep-md: true
+keep-ipynb: false
+embed-resources: true
+self-contained-math: true
+output-ext: html
+# NOTE: Navigation
+incremental: true
+navigation-mode: linear
+scrollable: true
+transition: slide
+progress: true
+touch: true
+keyboard: true
+mouse-wheel: false
+hide-inactive-cursor: true
+controls: true
+controls-layout: edges
+controls-tutorial: true
+controls-back-arrows: visible
+help: true
+# NOTE: Metadata
+pagetitle: "PSY-300 Chapter 1 - Scientific Thinking"
+keywords:
+  - "PSY-300 Chapter 1 - Scientific Thinking"
+description-meta: "PSY-300 Chapter 1 - Scientific Thinking"
+author-meta: "Quinton Quagliano, M.S., C.S.P."
+date-meta: today
+# NOTE: Slide Content
+smaller: false
+footer: ""
+preview-links: false
+link-external-newwindow: true
+slide-tone: false
+auto-stretch: false
+# NOTE: Code
+code-fold: show
+code-copy: true
+code-summary: "R Code"
+highlight-style: github-dark
+# NOTE: Plugins
+tts:
+  ttsOn: false
+revealjs-plugins:
+  - verticator
+  - tts
+  - codefocus
+  - pointer
+filters:
+  - reveal-header
+footer-logo-link: "https://www.gvsu.edu/"
+hide-from-titleSlide: "text"
+header: "Chapter 1 - Scientific Thinking || PSY-300: Research Methods in Psychology"
+
+# SECTION: Format opts
+
+format: 
+  # NOTE: RevealJS Slides Dark Theme
+  revealjs:
+    output-file: ch_1_lecture_dark
+    theme: ./theme/gv_theme_dark.scss
+    css: ./theme/gv_style_dark.css
+    pointer:
+      color: white
+    logo: ./imgs/gvsu_markleft_white.png
+  # NOTE: RevealJS Slides Light Theme
+  revealjs+light:
+    output-file: ch_1_lecture_light
+    theme: ./theme/gv_theme_light.scss
+    css: ./theme/gv_style_light.css
+    pointer:
+      color: blue
+    logo: ./imgs/gvsu_markleft_2c.png
+  # NOTE: PDF Notes
+  titlepage-pdf:
+    title: Chapter 1 - Scientific Thinking
+    # NOTE: Titlepages opts
+    titlepage: academic
+    titlepage-logo: "./imgs/gvlogo.png"
+    titlepage-theme:
+      elements: ["\\headerblock", "\\logoblock", "\\titleblock", "\\authorblock"]
+      page-align: "center"
+      title-style: "doublelinetight"
+      title-fontstyle: ["huge", "bfseries"]
+      title-space-after: "1.5cm"
+      subtitle-fontstyle: "Large"
+      author-style: "two-column"
+      affiliation-style: "none"
+      author-space-after: "1.5cm"
+      author-fontstyle: "small"
+      affiliation-fontstyle: "small"
+      logo-space-after: "2\\baselineskip"
+      logo-size: 250pt
+      header-fontstyle: ["textsc", "LARGE"]
+      header-space-after: "1.5cm"
+    # NOTE: PDF opts
+    toc-title: "Table of Contents"
+    toc: true
+    toc-depth: 2
+    lof: false
+    lot: false
+    number-depth: 2
+    number-sections: true
+    keep-tex: false
+    keep-md: false
+    # NOTE: LaTeX opts
+    include-in-header:
+      - file: "./tex/header.tex"
+    include-before-body:
+      - file: "./tex/before_body.tex"
+    # NOTE: Rendering opts
+    engine: knitr
+    documentclass: scrartcl
+    pdf-engine: xelatex
+    geometry: margin = 1in
+    papersize: letter
+    output-file: ch_1_lecture_notes
+    output-ext: pdf
+    # NOTE: Link opts
+    colorlinks: true
+    linkcolor: gvblue
+    urlcolor: gvblue
+    citecolor: gvblue
+    # NOTE: Font and language opts
+    fontsize: 12pt
+    microtypeoptions: protrusion = true
+    lang: en-US
+    fontenc: T1
+    # NOTE: Code opts
+    highlight-style: a11y
+    # NOTE: Fig and tbl opts
+    fig-align: center
+    cap-location: top
+    fig-cap-location: top
+    tbl-cap-location: top
+    fig-pos: H
+    tbl-pos: H
+    fig-width: 7
+    fig-height: 5
+    # NOTE: Metadata opts
+    title-meta: "PSY-300 Chapter 1 Lecture Notes - Scientific Thinking"
+    author-meta: "Quinton Quagliano, M.S., C.S.P."
+    date-meta: today
+    keywords:
+      - "PSY-300 Chapter 1 Lecture Notes - Scientific Thinking"
+    subject: "PSY-300 Chapter 1 Lecture Notes - Scientific Thinking"
