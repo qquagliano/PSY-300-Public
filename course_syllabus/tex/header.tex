@@ -1,0 +1,25 @@
+% NOTE: KOMAscript settings for header and footer
+\usepackage[headsepline = 1.5pt, footsepline = 1.5pt]{scrlayer-scrpage}
+\setkomafont{pagenumber}{\bfseries}
+\setkomafont{pagehead}{\bfseries}
+\setkomafont{pagefoot}{\itshape}
+\lohead*{PSY-300 Syllabus}
+\rohead*{\pagemark}
+\cofoot*{"I don't mind not knowing. It doesn't scare me." - Richard Feynman }
+
+% NOTE: Color settings
+\usepackage{color}
+\definecolor{gvblue}{HTML}{0032A0} % NOTE: Setting a new color
+\renewcommand\thesection{\color{gvblue}\arabic{section}} % NOTE: Change section number color
+
+% NOTE: Symbols, Fonts, and typesetting
+\usepackage{bbding} % NOTE: For checkmark with \Checkmark
+\usepackage{mathtools, amsthm, amssymb, amsfonts}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+
+% NOTE: Double-spacing and indents
+% \usepackage{setspace} % NOTE: Allows for specifying spaces
+% \usepackage{indentfirst} % NOTE: Indent first paragraph
+
+\usepackage{multicol}

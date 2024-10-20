@@ -1,0 +1,198 @@
+---
+# SECTION: Bibliography opts
+# bibliography: "./refs/refs.bib"
+# cite-method: citeproc
+# citeproc: true
+# csl: "./refs/apa-cv.csl"
+# link-citations: true
+# link-bibliography: true
+# suppress-bibliography: true
+---
+
+<!-- NOTE: If on Nix, run ./nix/build_env.R prior to rendering -->
+
+```{r}
+#| lst-label: lst-r-libraries
+#| lst-cap: "R libraries"
+
+base::library(package = knitr) # NOTE: For document rendering
+base::library(package = quarto) # NOTE: For document framework
+knitr::write_bib(
+  x    = base::.packages(),
+  file = "./refs/r_packages.bib"
+)
+```
+
+```{r}
+#| lst-label: lst-knitr-opts
+#| lst-cap: "Knitr options"
+
+base::options(knitr.kable.NA = "-")
+```
+
+{{< pagebreak >}}
+
+# Assignment Instructions
+
+This research proposal is the definitive take-home assignment for the course and
+will require that you use many of the skills you have built through the
+semester. This assignment allows me to best assess your mastery of literature
+review, scientific writing, and sound research design in a format which will
+prepare you well for future courses. Whereas the exams and quizzes will test
+your knowledge, this assignment will require a strong command of applying the
+concepts you've learned. Please write in a manner that would allow this plan to
+be followed by someone actually attempting to conduct this research.
+
+In class, we will have workshops, tutorials, and guided writing time to support
+you in this project. It would be very wise to start this paper as early as
+possible and work on it steadily through the second half of the semester. Robust
+research projects in the "real world" are often planned over the course of weeks
+or months! Take your time, meet the preliminary deadlines, and use all the
+resources available to you - and you will do well on this assessment.
+
+You may find it helpful to work on this alongside your article critique project.
+Whereas that critique will focus on your ability to read and recognize ideas in
+research, this project will put more emphasis on your own ability to explain and
+rationalize certain design decisions.
+
+The end product should contain these 4 sections:
+
+## Introduction
+
+A thorough literature review establishing context for your planned study. You
+should use vetted, peer-reviewed sources that add support to the topic you
+choose as a valuable and meaningful area of investigation. Scaffold naturally
+from foundation concepts in the research area to the "gap" that you are trying
+to fill with the proposal. Effectively, you are making an argument for why this
+research is needed and providing the necessary information for a reader to
+understand your starting point. You will also need to write a clear hypothesis
+that articulates the goal of the study and expected outcome.
+
+## Methods
+
+Layout a complete plan for sampling, measures, procedures, and planned analyses
+for your study. Your plan should balance ethics, power, and practicality in such
+a way that the study could feasibly be completed with adequate time and
+resources. You should also reasonably address each area of validity we have
+discussed in class and the impact of design decisions on the strength and
+generalizability of claims. Where necessary, consider citing previous work in
+the area with similar methodology that buttresses your approach. Give detail on
+the scale of measurement, and rationale your use of particular statistical tests
+that are appropriate for these tests. (*Do not worry too much about in-depth
+statistical procedures, that will be covered further in future course - but it
+will help to get familiar sooner*)
+
+## Discussion
+
+A hypothetical discussion of what the implications are for whether results are
+significant or not. Make sure to clearly connect your "results" back to the
+literature and "gap" you provide in your introduction. Explain what your
+findings would mean in the context of existing research, and provide appropriate
+and rational discussion of limitations and future directions for research.
+
+## References
+
+An APA 7th Edition-style bibliography that contains the full information for all
+citations used in the project. If you use tools such as Citation Machine or
+Zotero/EndNote, make sure to double-check that citations are correct, as
+sometimes automated tools can cause unexpected issues.
+
+# Timeline of Project Steps and Due Dates
+
+Submission of each step on time is accounted for by points for the project.
+Please make sure that you stay on track to earn all of your points and so that
+you do not risk having an overwhelming amount of work at the end of the
+semester.
+
+## Topic Approval
+
+You must submit a brief summary (3 - 4 sentences) of a topic of your choice for
+my approval, and include a rough idea of what type of design you could use. This
+study must be psychological in nature, but may be in any domain of psychology.
+That being said, I would encourage you to choose a topic that both has adequate
+amounts of literature about it AND is personally interesting to you. You also
+want to ensure that the topic can be investigated through the methods we have
+learned in this course. You may have to do an early literature review to ensure
+there are enough papers out there in order to write a proper introduction. I
+require that you submit this description for approval by Oct 29. (5 pts)
+
+## First Draft
+
+You will provide an early draft of your proposal, which allows me to assess your
+progress and direction, and provide you with feedback. Part of this draft will
+need to be an annotated bibliography with a minimum of 10 peer-reviewed sources,
+published since 2000. An annotated bibliography looks similar to what a
+"References" section looks like in a paper, but with written notes for each
+citation explaining how it will be used in the paper. I will expect you to at
+least have outlined and/or began writing your introduction at this point.
+Properly tracking and integrating sources is one of the most difficult parts
+about planning research, so please put good time into reading and evaluating
+articles for inclusion in your final project.
+
+It is to your advantage to finish as much of your proposal as you can before
+this deadline, as I can give more feedback, and it will set you up better for an
+easier final submission. This is due by Nov 12. (15 pts)
+
+## Final Draft
+
+A final submission of the completed project. This will, ideally, be a natural
+continuation of your chosen topic and draft from the prior parts. I expect this
+to be well-written and edited, in APA 7 style, use adequate amounts of
+peer-reviewed citations, and flow well in its logic. This is due by Dec 3. (80
+pts)
+
+# Rubric
+
+There is no word or page limit or minimum, but please make sure to include
+enough content to do justice to the topic and each section, while still being
+clear and concise. If you have concerns about your length, please reach out to
+me.
+
+| Points | Component                    |
+| ------ | ---------------------------- |
+| 5      | Topic Approval               |
+| 15     | First Draft                  |
+| 10     | Final Draft - Writing Style  |
+| 20     | Final Draft - Introduction   |
+| 20     | Final Draft - Methods        |
+| 20     | Final Draft - Discussion     |
+| 10     | Final Draft - References     |
+
+# Tips
+
+## Start Early
+
+While you won't be able to start on this project until you have some knowledge
+under your belt, I recommend you at least begin considering options for this
+project early in the semester. I myself have been guilty of procrastinating
+writing, and I know how much a pain it is to have to make it up quickly. Make
+sure you spread your writing out and revisit your work to re-edit and add
+content where needed.
+
+## DO NOT USE AI
+
+While this is against my course policy in general (see the syllabus), I can't
+emphasize enough that you MUST use your own words and work to perform well. AI
+is notorious for making up citations that do not exist and mis-citing
+information. In such a case, you would not just be guilty of using a prohibited
+tool, you would also be plagiarizing. I want each of you to succeed and grow on
+your own merits - and using compensatory strategies will take away from your
+learning. If you feel you must use it to aid your writing, please triple-check
+your work and citations.
+
+## Read More Articles
+
+This seems intuitive, but really, reading well written scientific articles will
+help give you an idea of what the flow of scientific writing sounds like. The
+APA 7 Manual also has many helpful suggestions for how to approach writing in
+this style. Research oftentimes reads very different from other form of
+literature, so it is critical to understand how it tends to read and provide
+information.
+
+## Use ALL of Your Resources
+
+Come talk to me. Go to the librarians. Read up on research guides from the
+library and college. Have the Writing Center help you edit your early work. You
+have many opportunities to craft a stellar piece of work - make sure you use
+them readily! There is no shame in asking for help, but you must do so early
+when there is still time to correct things.

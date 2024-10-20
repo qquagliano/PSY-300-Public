@@ -1,0 +1,99 @@
+# SECTION: Overall opts
+title: "PSY-300: Research Methods in Psychology"
+subtitle: "Syllabus Fall 2024"
+author:
+  - name: "Quinton Quagliano, M.S."
+    affiliation: "Department of Psychology"
+date: today
+date-format: full
+# SECTION: Format opts
+format:
+  # NOTE: Requires "quarto install extension nmfs-opensci/quarto_titlepages"
+  titlepage-pdf:
+    # SECTION: Titlepages opts
+    titlepage: academic
+    titlepage-logo: "./gvlogo.png" # NOTE: "\\logoblock" goes after \\headerblock 
+    titlepage-theme:
+      elements: ["\\headerblock", "\\logoblock", "\\titleblock", "\\authorblock"]
+      page-align: "center"
+      title-style: "doublelinetight"
+      title-fontstyle: ["huge", "bfseries"]
+      title-space-after: "1.5cm"
+      subtitle-fontstyle: "Large"
+      author-style: "two-column"
+      affiliation-style: "none"
+      author-space-after: "1.5cm"
+      author-fontstyle: "small"
+      affiliation-fontstyle: "small"
+      # NOTE: Only necessary if logo is used
+      logo-space-after: "2\\baselineskip"
+      logo-size: 250pt
+      header-fontstyle: ["textsc", "LARGE"]
+      header-space-after: "1.5cm"
+      # date-fontstyle: "large"
+    # SECTION: PDF opts
+    toc-title: "Table of Contents"
+    toc: true
+    toc-depth: 2
+    lof: false
+    lot: false
+    number-depth: 2
+    number-sections: true # NOTE: Necessary for cross-referenced sections
+    keep-tex: true
+    keep-md: true
+    # SECTION: LaTeX opts
+    include-in-header:
+      - file: "./tex/header.tex"
+    include-before-body:
+      - file: "./tex/before_body.tex"
+# SECTION: Rendering opts
+engine: knitr
+documentclass: scrartcl
+pdf-engine: xelatex # NOTE: Best modern LaTeX support
+geometry: margin = 1in
+papersize: letter
+# SECTION: Link opts
+colorlinks: true
+# NOTE: Match following to color set in ./tex/header.tex
+linkcolor: gvblue
+urlcolor: gvblue
+citecolor: gvblue
+# toccolor: gvblue
+# filecolor: gvblue
+# SECTION: Font and language opts
+# mainfont: Arial # NOTE: APA-recommended and accessible sans-serif font
+# monofont: Courier New # NOTE: APA-recommended monospace font
+fontsize: 12pt
+microtypeoptions: protrusion = true # NOTE: The only option that works on xelatex
+lang: en-US
+fontenc: T1
+# SECTION: Code opts
+highlight-style: a11y # NOTE: Accessible highlighting; also accepts .theme files
+# SECTION: Exec opts
+execute:
+  echo: false
+  warning: false
+  message: false
+  eval: true
+  output: false
+  cache: false
+  freeze: false
+# SECTION: Fig and tbl opts
+fig-align: center
+cap-location: top # NOTE: Sets both tables and figures cap locations
+fig-cap-location: top
+tbl-cap-location: top
+fig-pos: H
+tbl-pos: H
+fig-width: 7
+fig-height: 5
+# SECTION: Metadata opts
+title-meta: "PSY-300 Syllabus"
+author-meta: "Quinton Quagliano, M.S."
+date-meta: today
+keywords:
+  - "syllabus"
+subject: "PSY-300 Syllabus"
+# SECTION: Parameters opts
+# params: # NOTE: access via "params$placeholder1"
+#   placeholder1: 1

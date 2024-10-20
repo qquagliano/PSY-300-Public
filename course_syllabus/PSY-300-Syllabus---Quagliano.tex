@@ -1,0 +1,1475 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  12pt,
+  letterpaper,
+]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[protrusion = true]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin = 1in]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{2}
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+% NOTE: KOMAscript settings for header and footer
+\usepackage[headsepline = 1.5pt, footsepline = 1.5pt]{scrlayer-scrpage}
+\setkomafont{pagenumber}{\bfseries}
+\setkomafont{pagehead}{\bfseries}
+\setkomafont{pagefoot}{\itshape}
+\lohead*{PSY-300 Syllabus}
+\rohead*{\pagemark}
+\cofoot*{"I don't mind not knowing. It doesn't scare me." - Richard Feynman }
+
+% NOTE: Color settings
+\usepackage{color}
+\definecolor{gvblue}{HTML}{0032A0} % NOTE: Setting a new color
+\renewcommand\thesection{\color{gvblue}\arabic{section}} % NOTE: Change section number color
+
+% NOTE: Symbols, Fonts, and typesetting
+\usepackage{bbding} % NOTE: For checkmark with \Checkmark
+\usepackage{mathtools, amsthm, amssymb, amsfonts}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+
+% NOTE: Double-spacing and indents
+% \usepackage{setspace} % NOTE: Allows for specifying spaces
+% \usepackage{indentfirst} % NOTE: Indent first paragraph
+
+\usepackage{multicol}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\usepackage{hyphenat}
+\usepackage{ifthen}
+\usepackage{calc}
+\usepackage{calculator}
+
+
+
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{afterpage}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{fadings}
+\usepackage[pagecolor=none]{pagecolor}
+
+
+% Set the titlepage font families
+
+
+
+
+
+
+
+% Set the coverpage font families
+
+
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{american}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={PSY-300 Syllabus},
+  pdfauthor={Quinton Quagliano, M.S.},
+  pdflang={en-US},
+  pdfsubject={PSY-300 Syllabus},
+  pdfkeywords={syllabus},
+  colorlinks=true,
+  linkcolor={gvblue},
+  filecolor={Maroon},
+  citecolor={gvblue},
+  urlcolor={gvblue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{PSY-300: Research Methods in Psychology}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Syllabus Fall 2024}
+\author{Quinton Quagliano, M.S.}
+\date{Sunday, August 25, 2024}
+
+\begin{document}
+%%%%% begin titlepage extension code
+
+
+\begin{titlepage}
+
+%%% TITLE PAGE START
+
+% Set up alignment commands
+%Page
+\newcommand{\titlepagepagealign}{
+\ifthenelse{\equal{center}{right}}{\raggedleft}{}
+\ifthenelse{\equal{center}{center}}{\centering}{}
+\ifthenelse{\equal{center}{left}}{\raggedright}{}
+}
+
+
+\newcommand{\titleandsubtitle}{
+% Title and subtitle
+{{\huge{\bfseries{\nohyphens{PSY-300: Research Methods in
+Psychology}}}}\par
+}%
+
+\vspace{\betweentitlesubtitle}
+{
+{\Large{\nohyphens{Syllabus Fall 2024}}}\par
+}}
+\newcommand{\titlepagetitleblock}{
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+
+\HRule\\[0.4cm]
+
+\titleandsubtitle
+
+\HRule\\
+}
+\newcommand{\authorstyle}[1]{{\small{#1}}}
+
+\newcommand{\affiliationstyle}[1]{{\small{#1}}}
+
+\newcommand{\titlepageauthorblock}{
+\newlength{\miniA}
+\setlength{\miniA}{0pt}
+\newlength{\namelen}
+\settowidth{\namelen}{Quinton Quagliano,
+M.S.}\setlength{\miniA}{\maxof{\miniA}{\namelen}}
+\setlength{\miniA}{\miniA+0.05\textwidth}
+\newlength{\miniB}
+\setlength{\miniB}{0.99\textwidth - \miniA}
+\begin{minipage}{\miniA}
+\begin{flushleft}
+{\authorstyle{Quinton Quagliano, M.S.}}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{\miniB}
+\begin{flushright}
+{\affiliationstyle{Department of Psychology
+\\}}
+\end{flushright}
+\end{minipage}}
+
+\newcommand{\titlepageaffiliationblock}{}
+\newcommand{\headerstyled}{%
+{\textsc{\LARGE{}}}
+}
+\newcommand{\footerstyled}{%
+{}
+}
+\newcommand{\datestyled}{%
+{\large{Sunday, August 25, 2024}}
+}
+
+
+\newcommand{\titlepageheaderblock}{\headerstyled}
+
+\newcommand{\titlepagefooterblock}{
+\footerstyled
+}
+
+\newcommand{\titlepagedateblock}{
+\datestyled
+}
+
+%set up blocks so user can specify order
+\newcommand{\titleblock}{\newlength{\betweentitlesubtitle}
+\setlength{\betweentitlesubtitle}{\baselineskip}
+{
+
+{\titlepagetitleblock}
+}
+
+\vspace{1.5cm}
+}
+
+\newcommand{\authorblock}{{\titlepageauthorblock}
+
+\vspace{1.5cm}
+}
+
+\newcommand{\affiliationblock}{{\titlepageaffiliationblock}
+
+\vspace{0pt}
+}
+
+\newcommand{\logoblock}{{\includegraphics[width=250pt]{gvlogo.png}}
+
+\vspace{2\baselineskip}
+}
+
+\newcommand{\footerblock}{}
+
+\newcommand{\dateblock}{{\titlepagedateblock}
+
+\vspace{0pt}
+}
+
+\newcommand{\headerblock}{}
+
+\thispagestyle{empty} % no page numbers on titlepages
+
+
+\newlength{\minipagewidth}
+\setlength{\minipagewidth}{\textwidth}
+\raggedright % single minipage
+% [position of box][box height][inner position]{width}
+% [s] means stretch out vertically; assuming there is a vfill
+\begin{minipage}[b][\textheight][s]{\minipagewidth}
+\titlepagepagealign
+\headerblock
+
+\logoblock
+
+\titleblock
+
+\authorblock
+\par
+
+\end{minipage}\ifthenelse{\equal{}{right} \OR \equal{}{leftright} }{
+\hspace{\B}
+\vrulecode}{}
+\clearpage
+%%% TITLE PAGE END
+\end{titlepage}
+\setcounter{page}{1}
+
+%%%%% end titlepage extension code
+
+% NOTE: Better hold for LaTeX tables
+\floatplacement{table}{H}
+
+% NOTE: Set KOMAscript headings
+\pagestyle{scrheadings}
+
+% NOTE: Double-spacing and indents
+% \doublespacing
+\frenchspacing % NOTE: Only single space after period
+% \setlength{\parindent}{20pt} % NOTE: Amount of spacing in indent
+
+\renewcommand*\contentsname{Table of Contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+
+\newpage{}
+
+\section{Contact Information}\label{contact-information}
+
+\textbf{Instructor:} Quinton Quagliano, M.S. (he/him/his), Adjunct
+Professor of Psychology
+
+\textbf{Office:} AuSable Hall (ASH) 1307 - Shared Adjunct Faculty Office
+
+\textbf{Office Hours:} Fridays, 2:00pm - 5:00pm EST
+
+\textbf{Phone:} 616-331-2976 (Zoom Phone; Not Recommended)
+
+\textbf{Email:} \href{mailto:quagliaq@gvsu.edu}{QuagliaQ@gvsu.edu}
+(Strongly Recommended)
+
+\section{Course Overview}\label{course-overview}
+
+\subsection{Prerequisites}\label{prerequisites}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://www.gvsu.edu/catalog/course/wrt-150.htm}{WRT-150}
+\item
+  \href{https://www.gvsu.edu/catalog/course/psy-101.htm}{PSY-101}
+\item
+  \href{https://www.gvsu.edu/catalog/course/sta-215.htm}{STA-215} or
+  \href{https://www.gvsu.edu/catalog/course/sta-312.htm}{STA-312}
+\item
+  From these courses students should have a reasonable familiarity with
+  fundamental concepts in psychology and statistics prior to this course
+\item
+  Students should also be prepared to write in a coherent and clear way,
+  and be able to reasonably integrate evidence into arguments and
+  statements
+\end{itemize}
+
+\subsection{Successive Courses}\label{successive-courses}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://www.gvsu.edu/catalog/course/psy-350.htm}{PSY-350}
+\item
+  \href{https://www.gvsu.edu/catalog/course/psy-400.htm}{PSY-400}
+\item
+  These courses will expand on the students' skills established in this
+  course, in more applied projects and assignments
+\end{itemize}
+
+\subsection{Meeting Information}\label{meeting-information}
+
+\textbf{Modality:} In-person, synchronous, traditional classroom setting
+
+\textbf{Location:} AuSable Hall (ASH) 1142 Classroom
+
+\textbf{Time:} Tuesdays, 6:00pm - 8:50pm EST
+
+\subsection{Textbooks}\label{textbooks}
+
+\subsubsection{Required Text}\label{required-text}
+
+Morling, B. (2021). \emph{Research methods in psychology: Evaluating a
+world of information} (Fourth edition). W. W. Norton \& Company.
+
+This text is provided through the GVSU SAVE program, learn more about
+how it works here: \url{https://lakerstore.gvsu.edu/GVSUSAVEStudents}.
+Note that you may have to opt out of this program, by Sept.~6th, if you
+wish to purchase a physical copy. The link to access this text from
+Blackboard will be near the top of the page.
+
+\subsubsection{Recommended Text
+(Optional)}\label{recommended-text-optional}
+
+American Psychological Association (2020). \emph{Publication manual of
+the {American Psychological Association}: The official guide to {APA}
+style} (Seventh edition). American Psychological Association.
+\url{https://doi.org/10.1037/0000165-000}
+
+I would recommend you purchase a copy of this text, for reference during
+this course and future projects. I still regularly use my own during
+professional work, and it is a wealth of resources and suggestions for
+better scientific writing.
+
+\subsection{Course Description}\label{course-description}
+
+3-credit course.
+
+This course is focused on developing an understanding of philosophy,
+logic, and procedures of good science. We will cover a variety of
+experimental and observational methodologies in psychology, and discuss
+their respective strengths and weaknesses. Attention will be paid to
+developing rigorous procedures in psychological research and
+assessing/critiquing scientific literature. We will also explore ethics,
+bias, and validity in study design. Scientific writing and critical
+reading will be essential skills in this course.
+
+\subsection{Learning Objectives}\label{learning-objectives}
+
+At the end of this course students are expected to be able to:
+
+\subsubsection{Course Objectives}\label{course-objectives}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Comprehension/Describe:} Describe the details of summarize the
+  essence of research articles
+\item
+  \textbf{Application/Write:} Write clearly and cogently in a scientific
+  way
+\item
+  \textbf{Evaluation/Evaluate:} Evaluate strengths and weaknesses of
+  empirical studies consistent with the standards of psychological
+  science
+\end{itemize}
+
+\subsubsection{Professor's Objectives}\label{professors-objectives}
+
+\begin{itemize}
+\tightlist
+\item
+  Evaluate, summarize, and maturely discuss the merits and limitations
+  of research studies
+\item
+  Conduct effective literature reviews that are inclusive of all
+  relevant evidence
+\item
+  Make testable hypotheses supported by appropriate study design and
+  references
+\item
+  Write scientific papers clearly in the APA 7th edition style
+\item
+  Understand the importance of a high-standard of ethics in research
+\end{itemize}
+
+\subsection{Course Format}\label{course-format}
+
+This is an in-person, synchronous course that will meet in a traditional
+classroom setting for roughly 3 hours every Tuesday of the Fall
+semester. Class periods will consist of a combination of activities that
+support the engagement, attention, and learning of students for the
+entire 3 hours. Planned activities include: lectures, in-class
+discussion, demonstrations, \hyperref[quizzes]{Quizzes},
+\hyperref[exams]{Exams}, etc. Breaks will be provided intermittently
+throughout the course periods. Prepare for class periods to last the
+entirety of the scheduled course time. In-person classes will not be
+recorded, but some materials will be available to students who may have
+missed a class period due to excused absences (see {[}Attendence{]} and
+\hyperref[due-dates]{Due Dates}).
+
+Outside of class, students should work diligently and efficiently on
+assigned coursework. \textbf{Textbook readings, as indicated on the
+\hyperref[schedule]{Schedule}, are always required and not optional.}
+The readings will be tested upon and are essential for being prepared
+for content during the class period. I also require you submit your
+textbook notes for a subset of the chapters (i.e.,
+``\hyperref[reading-evidence]{Reading Evidence}'') In this course, my
+lectures and the assigned readings will be closely linked and should be
+viewed as complimentary to each other. I will ensure lectures cover the
+key content from each chapter. We only meet once every week, so students
+are expected to manage their own time well, and to finish all
+assignments in advance of the deadlines provided in the
+\hyperref[schedule]{Schedule}.
+
+\section{Course Policies}\label{course-policies}
+
+This course is subject to the general GVSU policies listed at
+\url{http://www.gvsu.edu/coursepolicies/}. Please review all content on
+that webpage in addition to what is written here. If you have questions
+or concern about any of these policies, please contact me.
+
+\subsection{Contacting Me}\label{contacting-me}
+
+Prior to contacting me, please review this syllabus, relevant assignment
+sheets, and presentations and make sure the answer you seek is not
+already there first. While I always invite questions and communication,
+I ask that you are discerning in using your available resources first.
+
+If you do need to reach out, refer to my
+\hyperref[contact-information]{Contact Information}. \textbf{Please
+prioritize using email, and include your full name, course number, and
+section number in the subject line, as well as a description of what you
+need help with}. An example would be:
+
+``Re: Riley Quagliano, PSY-300 Section 10, SPSS Help for Assignment 2''
+
+Be thorough in your email and tell me what resources you have already
+used to try to address your concerns. Detail is helpful so that I am
+able to fully understand and attend to your concern. I am generally able
+to send responses within 24 hours during weekdays, but please allow me
+up to 48 hours to respond. If I haven't responded within 48 hours
+(during weekdays), please send me a remainder email - I promise I am not
+ignoring you! If you email me during the weekend or later on a Friday, I
+cannot guarantee a response any earlier than Monday.
+
+Of course, you are always welcome to ask to schedule a video chat or
+office visit, or just stop by during my listed office hours - I'm happy
+to receive visitors for questions about the course or to chat about
+other things. I usually hang around campus after the scheduled course
+time, so you may catch me after class for shorter conversations.
+
+\subsection{Integrity, Plagiarism, \& Academic
+Dishonesty}\label{integrity-plagiarism-academic-dishonesty}
+
+This course will challenge students to grow skills in responsible and
+ethical research, in which one of the most essential abilities is
+writing in a way that gives proper attribution and credit. When drafting
+a paper, presentation, report, or any type of assignment we
+\textbf{must} take care to use our own words and thoughts, and cite the
+scholars that we build from. In the academic world, plagiarism,
+fabrication, and confabulation are some of the most egregious crimes,
+and have resulted in de-funding of labs, loss of grants, and the
+destruction of professional reputations.
+
+I will hold students to the same high standards of the professional
+research world, as I wish to ensure all of you are able to leave this
+course confident in your ability to conduct and write ethical research.
+I will help all students steadily build these skills, and do expect
+early mistakes that need correction. However, any evidence of
+intentional or negligent plagiarism or academic dishonesty will be
+handled in line with the GVSU Student Code.
+
+As described by the GVSU Student Code, ``Offering the work of someone
+else as one's own is plagiarism\ldots{}'' ``Any ideas or material taken
+from another source for either written or oral presentation must be
+fully acknowledged.'' ``Depending on the instructor's judgment of the
+particular case, he/she may \ldots{} give a failing grade for the
+\ldots{} entire course.'' Simply rearranging the words or substituting
+synonyms in the original source is still plagiarism. Details about the
+APA method for citing research will be provided during the course.
+Furthermore, students should not self-plagiarize, that is, reuse their
+own work from another course.
+
+Students are permitted to be in study groups and learn from one another,
+but all submitted work should be distinct and unique to each individual.
+I would recommend you only study in groups for quizzes or exams, but
+complete other work (e.g., Article Critique, Research Proposal, etc.) as
+an individual, to avoid unintentional plagiarism. Students in other
+sections of this course, with other professors, may not have perfectly
+aligned content with the pace of this section.
+
+\subsection{Use of AI Tools}\label{use-of-ai-tools}
+
+The following statement should be understood as constituting my policy
+on use of AI tools in this course:
+
+AI Policy Statement by David A. Joyner
+(\href{mailto:davidjoyner@fediscience.org}{\nolinkurl{davidjoyner@fediscience.org}})
+
+\begin{quote}
+``We treat AI-based assistance, such as ChatGPT and Copilot, the same
+way we treat collaboration with other people: you are welcome to talk
+about your ideas and work with other people, both inside and outside the
+class, as well as with AI-based assistants.
+
+However, all work you submit must be your own. You should never include
+in your assignment anything that was not written directly by you without
+proper citation (including quotation marks and in-line citation for
+direct quotes).
+
+Including anything you did not write in your assignment without proper
+citation will be treated as an academic misconduct case. If you are
+unsure where the line is between collaborating with AI and copying from
+AI, we recommend the following:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Never hit ``Copy'' within your conversation with an AI assistant. You
+  can copy your own work into your conversation, but do not copy
+  anything from the conversation back into your assignment. Instead, use
+  your interaction with the AI assistant as a learning experience, then
+  let your assignment reflect your improved understanding.
+\item
+  Do not have your assignment and the AI agent open at the same time.
+  Similar to above, use your conversation with the AI as a learning
+  experience, then close the interaction down, open your assignment, and
+  let your assignment reflect your revised knowledge. This includes
+  avoiding using AI directly integrated into your composition
+  environment: just as you should not let a classmate write content
+  directly into your submission, so also avoid using tools that directly
+  add content to your submission.''
+\end{enumerate}
+\end{quote}
+
+While ``AI'', as we know it, may be a useful tool for learning and
+troubleshooting, it is never an acceptable replacement for graded and
+professional work. For the work in this course, I'd strongly recommend
+you rely upon class content, the textbook, and peer-reviewed scientific
+research to study and build your skills. If I have reason to believe
+that AI tools have been used to generate work passed off as your own, I
+will investigate it the same as any other form of academic dishonesty
+(see \hyperref[integrity-plagiarism-academic-dishonesty]{Integrity,
+Plagiarism, \& Academic Dishonesty}). I implore you to maintain a high
+level of integrity in your work and I will take appropriate measures to
+detect and investigate unethical use of AI tools.
+
+\subsection{Respectful and Inclusive
+Environment}\label{respectful-and-inclusive-environment}
+
+All students, in all their virtual and physical interactions with myself
+and one another, are expected to treat each other in a mindful and
+professional manner. Please be respectful of your classmates' diverse
+identities, backgrounds, and beliefs. Even in disagreements or tense
+discussion, students should remain constructive in their arguments, and
+not personally attack one another. If at any point you feel that another
+student has acted maliciously, aggressively, or disrespectful towards
+you, please notify me immediately, so I may address it. Additionally, if
+you have concern about my own conduct, please do let me know so, I can
+correct it. Those that continue to act in a way that is harmful to the
+classroom environment may be dismissed from the course and referred to
+college administration for further discipline.
+
+\subsection{Electronic Devices}\label{electronic-devices}
+
+Students are permitted to use computers or other devices to take notes
+and complete assignments during the class period. In fact, I encourage
+you to bring internet-capable devices to our class meetings, as they
+will likely be helpful in certain in-class activities and quizzes.
+However, refrain from doing any activities during class that distract
+those around you (e.g., watching videos, playing video games, listening
+to music, distracting loud keyboards, etc.) If I suspect that you are
+harming the learning experience of other students, I will ask you to
+either cease the behavior or switch to pen-and-paper for note-taking.
+Please ensure all electronic devices are silenced during class (medical
+devices that must alert for the well-being of the user are exempt).
+Regardless of whether you intend on using an electronic device for
+class, I'd recommend having a pen/pencil and paper, in case a device
+crashes or is out of battery.
+
+\subsection{Food and Drink}\label{food-and-drink}
+
+It is fine to eat and drink during the class period (except for during
+exams and quizzes), as long as you are able to do so quietly and without
+interrupting others. Please do not make a mess, as to be respectful to
+those who diligently clean our rooms.
+
+\subsection{Course Materials and
+Recordings}\label{course-materials-and-recordings}
+
+For any materials created by me, such as notes, slides, handouts,
+assignments, etc. - do not share these materials with students who are
+not in the section, now or in the future. You may keep them for your own
+personal reference. I cannot allow students to keep copies of exams or
+quizzes, even after they are graded. Resources that I provide that are
+already public or semi-public, like articles and webpages, are fine to
+share with anyone.
+
+Class periods will not be recorded by me, nor are students permitted to
+record the class lecture with any form of video, audio, or transcription
+equipment. I will provide a separate recording of the lecture(s), as
+well as accompanying slides, for any given class meeting \emph{after}
+the class meeting it compliments. These materials are provided to help
+students review the lecture content, if you believe there is something
+you may have missed during the class period. \textbf{The posted lecture
+recording and slides are NOT a substitute for being in class at the
+designated meeting time - as you will miss important in-class
+discussions and activities, if you are not present.}
+
+\subsection{Attendance}\label{attendance}
+
+Please try to make it to class, on time, for all scheduled class
+periods. Coming in late may disrupt your peers' learning and my ability
+to lecture. It is difficult to keep up with the course content if you
+miss part of or all of the class. While I understand that life
+circumstances may force you to miss class or be late on occasion, it
+will likely impair your ability to succeed in this course. If you
+suspect attendance will be consistently difficult for you in this
+course, I would suggest that you consider leaving this section. If you
+expect to miss a class period, or do so due to an emergency, please
+reach out to me to make up work (see more details in
+\hyperref[due-dates]{Due Dates}).
+
+\subsection{Due Dates}\label{due-dates}
+
+\textbf{All due dates, as they are listed in the schedule, are firm.}
+You should closely track your own progress in the course and ensure that
+you are keeping on pace. You should plan to make every attempt to attend
+our regularly scheduled course times so that you may complete any
+necessary assessments. Take-home assignments are due at the start of
+class time.
+
+If you expect that a qualifying pre-existing obligation, that cannot be
+moved, will interfere with class time, please reach out to me \textbf{at
+least one week prior to the affected course meeting.} So that we may
+make arrangements for you to turn in relevant work, and take any missed
+\hyperref[quizzes]{Quizzes} or \hyperref[exams]{Exams}. If you find
+yourself in an emergency situation that prevents your attendance in
+class/turning in work on time, please notify me as soon as possible and
+provide documentation on what your emergency was (e.g., doctor's note).
+
+I will work with students to ensure you have the opportunity to submit
+your work and make it up. \textbf{Barring extraordinary circumstances,
+you must reach out to me within 48 hours of the original due date to
+coordinate an appropriate time to submit the work.}
+
+In the cases of missed work needing to be made up, I ask that we
+complete the work prior to the next class period as to not delay review
+of exams or quizzes for your peers. \textbf{It is the student's
+responsibility to contact me regarding make-up work - failure to do so
+in a timely manner (48 hrs) will result in the total forfeiture of
+points.}
+
+Barring exemptions, as explained above, late work will have 25\% of
+earned points deducted per each day late (including weekends). Work is
+considered to be a day late immediately after submission for assignments
+at the start of the class period. Example: a paper (50 points total) is
+submitted 2 days late, and earns 40/50 points - this paper will have
+50\% of earned points deducted, resulting in a 20/50. Thus, after 4 days
+late, an assignment will not be eligible for any points.
+
+Please submit all assignments through their respective
+\hyperref[blackboard-ultra]{Blackboard Ultra} submissions, regardless of
+whether they are late or not. Do not email me or hand in paper copies of
+assignments unless I request so - I will redirect you to submit through
+Blackboard.
+
+\subsection{Changes to the Syllabus and
+Schedule}\label{changes-to-the-syllabus-and-schedule}
+
+It is plausible that events during the semester may require that I
+modify the syllabus or schedule. As soon as I know such a change must be
+made, I will notify you all through Blackboard and those messages should
+be understood as amending this document.
+
+\section{Blackboard Ultra}\label{blackboard-ultra}
+
+I will be making liberal use of Blackboard Ultra to communicate,
+administer assignments, and share course materials. Please make sure you
+have a working knowledge of this platform and can reasonably navigate it
+to find messages and submit assignments. You should have access to an
+e-learning Blackboard tutorial course that can show you the basic
+functions. I will try to use Blackboard to keep you all engaged during
+the weeks and provide additional resources to those who are interested.
+Prior to the course starting, please browse around and make sure you can
+access and view everything alright. I will attempt to keep information
+between this syllabus and schedule, and Blackboard as congruent as
+possible. If you experience technical problems with Blackboard or are
+not able to get things working in your browser, contact the help desk:
+
+\textbf{Website:}
+\url{https://www.gvsu.edu/elearn/help/blackboard-student-help-2.htm}
+
+\textbf{Email:}
+\href{mailto:helpdesk@gvsu.edu}{\nolinkurl{helpdesk@gvsu.edu}}
+
+\textbf{Phone:} (616) 331-3513
+
+If you find issues in due dates, grades, assignment format, etc., that
+appear to be a mistake by me, please contact me and let me know, so I
+can promptly fix it.
+
+\section{Grading}\label{grading}
+
+Summative assessment (i.e., graded assignments) are key to evaluating a
+student's success in learning the content of this course. I have set up
+this course to be forgiving for the sake of learning, as mistakes and
+missteps are often part of the growth process. However, I must fairly
+evaluate the abilities each student builds in this course, and must
+ensure that the learning objectives are met. That being said, I care
+deeply about the effort and motivation that you have put into this
+course and have included assignments that award points for good-faith
+attempts and offer room for improvement. My goal is to readily submit
+grades on \hyperref[blackboard-ultra]{Blackboard Ultra} as I complete
+them, so that you may be well-informed to your current status. All grade
+functions on Blackboard should be fully set-up so that you can easily
+track your progress and success.
+
+\textbf{I cannot and will not ``bump'', ``curve'', ``round'', or
+``scale'' grades at the individual student level, due to any
+circumstance. Please do not ask me to do this.} Such a change in
+student's grades can lead to unfairness and subjectivity in how students
+are assessed, and would be unfair to your peers. In the case of an error
+in grading or poor class performance on a test question, I will consider
+the need to drop questions or adjust grading for all students equally.
+The standard for what constitutes certain letter grades (e.g., A, A-, B,
+etc.) in this course will be presented in this syllabus, and is subject
+to (downward) change if I feel it is necessary.
+
+I will provide an accurate breakdown of the sources of points, and
+students are expected to monitor their own success throughout the term.
+If your performance is below what you would like at any point, please
+talk to me (see \hyperref[contacting-me]{Contacting Me}) or make use of
+the \hyperref[additional-resources]{Additional Resources}. Please make
+early adjustments to avoid any last minute issues that prevent you from
+obtaining the success you'd like.
+
+It is to the advantage of you, the student, that many points are
+possible in this course. That way, a few poor performances can be made
+up by consistent effort on the other available opportunities. The point
+ranges are approximations of the percents - please note your final
+letter grade will be determined solely by the percent range it falls in.
+If I remove quiz or exam questions or change the point total at any
+point, the point ranges will no longer properly apply.
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Letter Grade & Percent & Points \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+A & \textgreater93 & \textgreater474.3 \\
+A- & 90 - 92.99 & 459 - 474.2 \\
+B+ & 87 - 89.99 & 443.7 - 458.9 \\
+B & 83 - 86.99 & 423.3 - 443.6 \\
+B- & 80 - 82.99 & 408 - 423.2 \\
+C+ & 77 - 79.99 & 392.7 - 407.9 \\
+C & 73 - 76.99 & 372.3 - 392.6 \\
+C- & 70 - 72.99 & 357 - 372.2 \\
+D+ & 67 - 69.99 & 341.7 - 356.9 \\
+D & 63 - 66.99 & 321.3 - 341.6 \\
+F & \textless62.99 & \textless321.3 \\
+\end{longtable}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Assignment & Points & Percentage \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Introductions & 10 & 2\% \\
+Reading Evidence (5) & 10 x 5 = 50 & 9\% \\
+Exams (2) & 100 x 2 = 200 & 40\% \\
+Quizzes (12; 2 dropped) & 10 x 10 = 100 & 20\% \\
+Research Proposal & 100 & 20\% \\
+Article Critique & 50 & 9\% \\
+Extra Credit (?) & - & - \\
+------------------------ & --------------- & --------------- \\
+Total & 510 & 100\% \\
+\end{longtable}
+
+\section{Activity Types}\label{activity-types}
+
+I use a variety of activities as a source of points for your grade in
+this course. This way, I can assess your skill in many domains and
+mediums and can help you build a well-rounded skill set.
+
+\subsection{Introductions}\label{introductions}
+
+At the start of the semester, I ask that you all contribute to a
+Blackboard discussion board, so your classmates and I may learn a little
+bit about all of you. Please tell us:
+
+\begin{itemize}
+\tightlist
+\item
+  Your name (with phonemic spelling if you think it would help with
+  pronunciation) and pronouns (optional - only if you feel comfortable)
+\item
+  Your year in school (e.g., First-year, sophomore, etc.)
+\item
+  Your majors and minors
+\item
+  Briefly identify one area of research in psychology you find
+  interesting - it can be mundane or complex, broad or specific, just
+  throw something out there.
+\item
+  Explain one or two interesting facts or hobbies of yours - share
+  anything you'd like!
+\end{itemize}
+
+\subsection{Reading Evidence}\label{reading-evidence}
+
+For any 5 chapter readings (out of 14) in the textbook, please submit
+your notes that you take during your reading of the chapter. Your notes
+can be handwritten or typed, and can be in whatever format and style
+best suits your needs as a student. I just ask that you are
+comprehensive and thorough to the content of the chapter and cover all
+the sections to some degree. I may make suggestions on areas for
+improvement, but will generally award full points if you make a good
+faith attempt to cover all the content. It is recommended to do at least
+some of these during early chapters, so I may suggest strategies that I
+think will serve you well for the remainder of the semester. I do this
+so that you may be set up for success in note-taking to best serve you
+in this course, while also rewarding your dialogue with the reading.
+
+Of course, I \textbf{strongly} recommend that you take good notes for
+all chapters, not just the 5 ones you submit. They may aid you greatly
+in the open-note quizzes and preparation on the exams.
+
+\subsection{Exams}\label{exams}
+
+There will be 2 exams in this course. These exams are intended to be
+cumulative and will cover content from all prior units and
+\hyperref[quizzes]{Quizzes}. Much of the knowledge in this course is
+naturally cumulative, so it benefits you to review content from the
+previous units. However, the majority of test content will come from the
+most recent unit, with fewer questions being dedicated to the prior
+unit. The format is as follows:
+
+\begin{itemize}
+\tightlist
+\item
+  Each exam is 50 multiple-choice questions, 2 points for each question
+\item
+  Exams will be taken at the start of the class period, but after the
+  quiz review for the prior week. They will be taken on paper scantron
+  sheets.
+\item
+  Exams will contain content from the entire unit, between lectures AND
+  readings
+\item
+  Exams are timed, 113 minutes only (previously was 75 minutes)
+\item
+  Exams are not open-note, open-book, or collaborative. You are not
+  permitted to use any form of assistance to aid you during the tests.
+  Do not discuss the tests with other students after it has concluded
+\item
+  Quizzes and exam will be ended early if all students are clearly
+  finished and content with their answers
+\item
+  Exams will be graded promptly and reviewed the following week
+\end{itemize}
+
+\subsection{Quizzes}\label{quizzes}
+
+We will be taking quizzes routinely throughout the semester to help
+cement the concepts between each class period. For each student, I will
+drop each student's lowest 2 quiz grades from your final grade. The
+format is as follows:
+
+\begin{itemize}
+\tightlist
+\item
+  Each quiz is 10 multiple-choice questions, 1 point for each question
+\item
+  Quizzes will be taken at the start of the class period on the
+  Blackboard LMS
+\item
+  Quizzes will be on content covered in the previous lecture and the
+  associated reading for that lecture
+\item
+  Quizzes are timed, 23 minutes only (previously was 15 minutes)
+\item
+  Quizzes are open-note and open-book, that is, you are allowed to use
+  those resources during the quizzes. Thus, they reward good structure
+  in thoughtfulness in your notes and preparation (see
+  \hyperref[stay-organized]{Stay Organized})
+\item
+  You may not collaborate with others during the quizzes, or discuss
+  questions with other students after the quiz. You cannot use AI tools
+  or the internet to help you.
+\item
+  Quizzes and exam will be ended early if all students are clearly
+  finished and content with their answers
+\item
+  Quizzes will be graded promptly and reviewed the following week
+\end{itemize}
+
+Because of the fast nature of quizzes, you will not have time to look up
+answers to each of questions - please prepare by studying, reviewing,
+and understanding the content, using your organized notes and book as a
+quick backup.
+
+\subsection{Research Proposal}\label{research-proposal}
+
+This will be one of the most critical and important assignments in the
+course. You will be asked to generate an original research proposal that
+is ethical, well-designed, and rooted in a mature understanding of the
+scientific literature. This project will use many of the skills that you
+build throughout this course and should reflect a strong understanding
+of your capabilities as a budding researcher. We will discuss this
+project more after the first few weeks and I will provide a rubric
+highlighting my grading standards for this project.
+
+I will require that you identify a general topic for this proposal by
+Oct 29, and that you submit a draft of this proposal by Nov 12.
+
+\subsection{Article Critique}\label{article-critique}
+
+You will be tasked with independently finding a piece of empirical,
+peer-reviewed research in psychology that is interesting and accessible
+to you. Then I will ask that you critically assess the entire research
+piece to the best of your ability, critiquing the ethics, validity,
+design, and conclusions of the study. The full assignment will be
+discussed more in-depth later in the semester, as it is most appropriate
+to begin this project after you have demonstrated skills in literature
+review. However, you may want to begin casually searching for an
+interesting article early on, as I will ask you get your choice approved
+by me. I will provide a rubric highlighting my grading standards for
+this project.
+
+I will require that you are able to locate and provide me with the
+APA-style citation and full-text PDF of your chosen article. Your choice
+of article will need to be conveyed to me by Oct 29, and a draft will
+need to be submitted by Nov 12. Before starting this, you will want to
+be more familiar with many of the concepts present in the lectures.
+Later in the semester, we will do in-class article discussions to help
+prepare you for writing this critique.
+
+\subsection{Extra Credit (?)}\label{extra-credit}
+
+At this time, I do not plan on offering any extra credit for this
+course. \textbf{Please do not ask me to offer it and do not plan on it
+being offered.} \emph{If} I find an opportunity that I feel will enhance
+your experience in this course and be eligible for extra credit, I will
+notify you all through Blackboard. \emph{If} I do add extra credit
+assignments, they will supplement the existing points total, rather than
+adding to the total itself. This means that they will functionally
+``make up'' for lost points on the other assignments.
+
+\section{Schedule}\label{schedule}
+
+This schedule will be a rough plan for the semester. In addition to each
+scheduled quiz/exam and in-class activity, keep in mind I will lecture
+on the assigned reading for that week. There is the possibility that
+this schedule will need to change if lectures take longer than expected
+or if classes are canceled unexpectedly. I will communicate if deadlines
+change.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1446}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1205}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1928}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2651}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2771}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Class Date
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Reading
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Quiz / Exam
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+In-class Activity
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Due
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Aug 27 & Ch 1 & - & APA Style Practice & - \\
+Sep 3 & Ch 2 & Quiz 1 & Lit Search Demo 1 & Introductions \\
+Sep 10 & Ch 3 & Quiz 2 & Lit Search Demo 2 & Reading Evidence I \\
+Sep 17 & Ch 4 & Quiz 3 & Ethics Case Study & - \\
+Sep 24 & Ch 5 & Quiz 4 & Measures Search & - \\
+Oct 1 & Ch 6 & Quiz 5 & Exam 1 Study Guide & - \\
+Oct 8 & Ch 7 & Exam 1 & Writing Prep & - \\
+Oct 15 & Ch 8 & Quiz 7 & Article Discussion & - \\
+Oct 22 & - & - & - & - \\
+Oct 29 & Ch 9 & Quiz 8 & Writing Time & Writing Topics \\
+Nov 5 & Ch 10 & Quiz 9 & Article Discussion & - \\
+Nov 12 & Ch 11 & Quiz 10 & Writing Time & Writing Drafts \\
+Nov 19 & Ch 12 & Quiz 11 & TBD & - \\
+Nov 26 & Ch 13 & Quiz 12 & TBD & Reading Evidence II-V \\
+Dec 3 & Ch 14 & Quiz 13 & Exam 2 Study Guide & Writing Finals \\
+Dec 7 - 14 & - & Exam 2 / Final & - & - \\
+\end{longtable}
+
+\textbf{Notes on Reading the Schedule:}
+
+\begin{itemize}
+\item
+  Quiz content always corresponds to the reading and lecture from the
+  \emph{prior} class meeting, e.g., Quiz 7 will cover content from Ch 7
+  reading and lecture content from Oct 8. The week after a quiz, we will
+  review problematic concepts from that quiz.
+\item
+  ``Writing'' is shorthand that represents the article critique AND
+  research proposal projects
+\item
+  Chapters 6 (Oct 1) and 14 (Dec 3) and their corresponding lectures, do
+  not have a quiz associated with them, but will be covered by the
+  exams.
+\item
+  Chapter 7 and it's associated lecture (on Oct 8) will NOT be covered
+  by exam 1
+\item
+  The timing of the course final (exam 2) will be decided by the school
+  policy. I will communicate what the exact date and time of the exam
+  will be later on.
+\end{itemize}
+
+\textbf{Other Important Dates:}
+\url{https://www.gvsu.edu/registrar/academiccalendar.htm\#5CEEFECB-98D7-18B7-8BE44596135F45D8}
+
+\section{Additional Resources}\label{additional-resources}
+
+Outside myself, the textbook, and course content, there is a wealth of
+student resources available to you all. While I will always aim to be
+helpful and available to the best of my ability, I strongly encourage
+you to utilize these resources to support your learning and
+accommodation. Unfortunately, I am unable to offer extensive,
+individualized help to each student and may refer you to one of these
+services should you request that. Please visit the respective webpages
+for these services to learn more about what they can offer to you. There
+are many more than I can list, and you should definitely look at all the
+available services here:
+\url{https://www.gvsu.edu/clas/supporting-students-1136.htm}
+
+\subsection{Disability Accommodations}\label{disability-accommodations}
+
+\textbf{Webpage:} \url{http://www.gvsu.edu/dss}
+
+Any student who requires accommodation because of a physical or learning
+disability must contact Disability Support Services (DSS;
+\url{http://www.gvsu.edu/dss}) at 616-331-2490 as soon as possible. It
+is the student's responsibility to request assistance from DSS. After
+you have documented your disability, please contact me to set up an
+appointment or see me during office hours to discuss your specific needs
+in accordance with your documentation.
+
+Accommodations are always designed to maintain the academic integrity of
+the course; student with disabilities are held to the same academic
+standards as all other students. Accordingly, if no additional costs
+(including staff time) are involved, the instructor will extend such
+accommodation to anyone who requests them, whether or not the student
+has a declared disability. If a requested accommodation requires special
+equipment, space, personnel, staff time, or other resources beyond those
+normally available to the class, the accommodation will be offered only
+if the student has gone through the process that begins by declaring the
+disability with Disability Support Services. If you have a disability
+and think you might need assistance evacuating the classroom and/or
+building in an emergency situation, please make sure I am aware, so I
+can develop a plan to assist you.
+
+Please know that I am committed to making my classroom friendly and
+accessible to students of all needs and backgrounds. If there is
+something minor I can do to my presentations and materials to make them
+more accessible to you, please do let me know.
+
+\subsection{The Tutoring and Reading Center (One-on-one
+Tutoring)}\label{the-tutoring-and-reading-center-one-on-one-tutoring}
+
+\textbf{Webpage:} \url{https://www.gvsu.edu/tutoring/}
+
+\textbf{Description}
+
+Tutoring in the College of Liberal Arts and Sciences (CLAS) serves
+students at Grand Valley State University by providing tutoring and
+supplemental instruction. We foster academic success by providing
+multidisciplinary content support and promoting positive study behaviors
+to cultivate empowered, persistent learners in an inclusive, accessible,
+and learner-centered environment.
+
+\subsection{Fred Meijer Center for Writing and Michigan Authors (Writing
+Help)}\label{fred-meijer-center-for-writing-and-michigan-authors-writing-help}
+
+\textbf{Webpage:} \url{https://www.gvsu.edu/wc}
+
+\textbf{Description}
+
+The Fred Meijer Center for Writing provides writing assistance to all
+GVSU students, on any type of project and at any stage of the process.
+The Writing Center employs both undergraduate and graduate writing
+consultants from across majors and disciplines. Consultants are trained
+to help writers brainstorm, organize, or develop their ideas; and they
+can help writers edit their own work and document sources correctly. The
+Center's services are free and students can work with an idea,
+assignment prompt, or draft of their paper. Students can virtually drop
+in or schedule an appointment; both appointments and drop-ins are
+available during all service hours: (Mon-Thurs 9am-11pm, Friday 9am-3pm,
+Sunday 2pm-11pm). Due to COVID-19, all writing center services are
+available online. Limited in-person consulting may be available; please
+check the Writing Center's website for up-to-date information. All
+service options (drop- ins, appointments, email support) can be accessed
+via the Writing Center's online scheduling system - Book It. We look
+forward to working with you!
+
+\subsection{GVSU Knowledge Market (Research, Writing, and Presentations
+Help)}\label{gvsu-knowledge-market-research-writing-and-presentations-help}
+
+\textbf{Webpage:} \url{https://www.gvsu.edu/library/km/}
+
+\textbf{Description}
+
+The Knowledge Market is an interdisciplinary peer-to-peer collaborative
+service that brings together similarly-aligned academic programs to help
+students develop their intellectual skills, habits, and identities. The
+Knowledge Market offers one-stop support for library research, writing,
+oral presentations, and digital projects! Available to help with
+projects from any class, our highly-trained consultants are here for
+you.
+
+We have two convenient locations and offer online sessions, so you can
+meet with us from wherever you are. To have a consultation, schedule an
+appointment or join the drop-in queue at any of our locations. We look
+forward to working with you!
+
+\subsection{Psych Friends Peer Mentoring (Peer-to-peer
+Mentoring)}\label{psych-friends-peer-mentoring-peer-to-peer-mentoring}
+
+\textbf{Webpage:}
+\url{https://www.gvsu.edu/psychology/psych-friends-477.htm}
+
+Psych Friends mentors are upper-level psychology and behavioral
+neuroscience students who are trained to provide support in many areas,
+such as: effective studying and time management techniques, exam
+preparation and reflection skills, understanding the PSY and BNS major
+requirements, potential jobs and careers in the field, the process of
+applying for graduate school, and how to maintain physical and mental
+health as a student. Visit \url{https://www.gvsu.edu/navigate} to
+schedule an online or in-person meeting today!
+
+Psych Friends Peer Mentoring aims to increase the academic success \&
+well-being of psychology students by connecting upper division
+psychology majors (mentors) with students newer to the major (mentees).
+Psych Friends is a great way to expand your knowledge on all that the
+field of psychology has to offer and to build a social network with
+others within the psychology community.
+
+Make an appointment with a peer mentor to learn about the psychology and
+behavioral neuroscience major requirements, careers, and education paths
+in psychology, the graduate school application process, strategies to
+increase academic success, and/ or student self-care techniques. Our
+mentors would love to get to know you. We have plenty of time slots
+available to best fit your needs. Appointments can be made through
+Navigate and students can choose between having an appointment in person
+on campus, or to meet online via Zoom.
+
+\subsection{COVID-19 Resources}\label{covid-19-resources}
+
+\textbf{Webpage:} \url{https://www.gvsu.edu/lakerstogether/}
+
+Unfortunately, COVID-19 remains a threat to our student community.
+Please review the above link for resources to help protect yourself and
+others.
+
+\section{FAQ}\label{faq}
+
+\textbf{How do you say the professor's name and how should I address
+you?}
+
+The phonemic spelling is Kwin-tin Kwahg-lee-ah-no. You are welcome to
+call me Quinton, Prof.~Quagliano, or Prof.~Q. Please do not address me
+as Mr.~Quagliano (I find it odd) or Dr.~Quagliano (I have not earned
+that honorific).
+
+\textbf{What is the professor's background?}
+
+I have an B.S. in Psychology (neuroscience concentration) from
+\href{https://calvin.edu/}{Calvin University}, and an M.S. in
+Quantitative Psychology from \href{https://www.bsu.edu/}{Ball State
+University}. I am a full-time
+\href{https://www.napnet.org/what}{psychometrist} at Trinity Health
+Grand Rapids in addition to my adjunct role here. Generally, I describe
+myself as being research-oriented with emphasis on advanced quantitative
+(statistical) methods. I have had the pleasure on working on projects in
+a variety of theoretical domains, such as education, neuropsychology,
+neurology, psychiatry, and audiology. I remain loosely associated with
+Pine Rest Christian Mental Health Services, Ball State University, and
+Trinity Health Grand Rapids Neurology/Neuropsychology for ongoing
+research projects.
+
+I was a TA and tutor for students throughout my undergraduate and
+graduate education, and have been involved in clinical work (inpatient
+psychiatry and outpatient neuropsychology) for the last 6 years. My CV
+will be posted in the course Blackboard if you'd like to know more about
+me.
+
+\textbf{Can I talk to the professor about things other than class?}
+
+Of course! I love talking about research, careers, your academic
+journey, and your personal goals. You can always email me or stop by
+during office hours for a chat. Unfortunately, I cannot offer any
+research, teaching assistant (TA), or extracurricular opportunities to
+students at this time, but I can give you pointers on where to look for
+these things if you are interested! I can serve as a reference or
+``letter-writer'' for your future endeavors, but only if you ask me.
+
+\textbf{Why so many quizzes?}
+
+More assessments mean that a few bad scores won't sink your chances of a
+higher letter grade. Constant testing and revisiting of past topics are
+also excellent ways to learn and solidify concepts. It also lets me know
+if the class is struggling with certain topics, so I have time to
+re-hash ideas before the more-important exams. I know it may be
+stressful to have these every meeting, but I do promise they have a
+purpose to them. Take good notes revisit topics often and you should be
+okay.
+
+\textbf{How can I learn to write better?}
+
+One of the best ways to learn how to scholarly write is to constantly
+read published, scientific articles. I've refined my own writing style a
+lot by just emulating the style of more experienced scientists. Of
+course, good writing is a skill build up over the course of many years;
+so be patient and consistent in developing your abilities. I am here to
+help you prepare your written assignments, but make sure to use the
+writing center and other resources as well!
+
+\textbf{Should I drop the course?}
+
+I cannot make that decision for you, but I do encourage you to be
+constantly reflecting upon your success in the course. I try to provide
+timely feedback and review, so you know how you are performing on
+things. Sometimes, it is better to drop a course and return when you are
+more experienced, and there is no shame in doing so. I would suggest you
+speak with your academic adviser prior to making this decision, so that
+they can explain any ramifications on your overall degree progress.
+
+\textbf{Can I re-take or re-submit an assignment, exam, or quiz for a
+revised score?}
+
+No.~I give you adequate time, resources, and in-class support to study
+for quizzes/exams and prepare assignments. I will give constant feedback
+so that you are better equipped for future assignments, but cannot
+re-grade revised assignments. I'd like for students to be proactive in
+creating high-quality work the first time by starting work early and
+using good study habits.
+
+\textbf{Why are the article critique and research proposal due before
+the final exam?}
+
+My hope is that, by requiring these due prior to the final exams, you
+can better focus your efforts at the end of the semester towards
+studying and preparing for the exam in this course, and your other
+courses. It also means I can grade these quickly and have your course
+grade fully updated going into the final. This way, you know where you
+are at and can get a sense of your ability to aim for a certain letter
+grade. Because I have due dates for your topics and early drafts of both
+of these projects, you likely will already have a good start on both
+ahead of the due dates.
+
+\section{Tips for Success}\label{tips-for-success}
+
+\subsection{Back Up Your Work}\label{back-up-your-work}
+
+We have all been in the undesirable position of losing hours of work due
+to a sudden power outage or accident. I \textbf{strongly} recommend that
+you use platforms and methods to maintain your work in case of an
+accident. Use services like Microsoft OneDrive/365 or Google Drive to
+save your work in the cloud, or use software like git to version control
+your work. Save regularly and often, enabling auto-save if it is a
+feature in the software you use. While I empathize with the pain of
+suddenly losing work, technology issues are not an acceptable excuse for
+late work - as there are a variety of ways to preemptively protect your
+progress.
+
+\subsection{Stay Organized}\label{stay-organized}
+
+The start of the semester is the best time to establish the right
+organization method that keeps you on track. Losing assignments, papers,
+and notes to the void can feel like a huge setback. Think critically now
+about how you want to organize your physical/digital documents, and get
+it ready now. Stick with it, and you'll find it much easier to look back
+later when you need that knowledge! But remember to
+\hyperref[back-up-your-work]{Back Up Your Work}!
+
+\subsection{Create a Weekly Schedule}\label{create-a-weekly-schedule}
+
+While I provide a course \hyperref[schedule]{Schedule} to give structure
+to the overall class, I would recommend setting up a personal schedule
+for studying and attending to assignments throughout each week.
+Procrastinating and trying to rapidly complete work before deadlines
+will hurt the quality of your work and that will likely be reflected in
+your grade. Establishing good time-management habits early on in the
+semester will help you maintain a good balance between your life and
+classes.
+
+\subsection{Communicate Well With Me}\label{communicate-well-with-me}
+
+I ask that you regularly attend to your email and Blackboard so that you
+see important notifications from me regarding this course. If you need
+help or have question please do reach out to me as soon as possible
+(preferably via email). Ignorance or avoidance of emails and
+notification is not an excuse for late or poor work. I am always happy
+to point you in the right direction or clarify something, but I can only
+do so if you tell me your concerns.
+
+\subsection{Take Care of Yourself}\label{take-care-of-yourself}
+
+Balancing undergraduate studies with the stresses of life is difficult
+and is a time of change for many students. Make sure you get enough
+sleep, eat food and drink water, and spend time with friends and family.
+You'll do best in my course (and every course) when you are at your best
+mentally and emotionally! I look forward to supporting you all best I
+can this term!
+
+\emph{This course is subject to the GVSU policies listed at
+\url{http://www.gvsu.edu/coursepolicies/}}
+
+
+
+
+\end{document}

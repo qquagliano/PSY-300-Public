@@ -1,0 +1,188 @@
+---
+# SECTION: Bibliography opts
+# bibliography: "./refs/refs.bib"
+# cite-method: citeproc
+# citeproc: true
+# csl: "./refs/apa-cv.csl"
+# link-citations: true
+# link-bibliography: true
+# suppress-bibliography: true
+---
+
+<!-- NOTE: If on Nix, run ./nix/build_env.R prior to rendering -->
+
+```{r}
+#| lst-label: lst-r-libraries
+#| lst-cap: "R libraries"
+
+base::library(package = knitr) # NOTE: For document rendering
+base::library(package = quarto) # NOTE: For document framework
+knitr::write_bib(
+  x    = base::.packages(),
+  file = "./refs/r_packages.bib"
+)
+```
+
+```{r}
+#| lst-label: lst-knitr-opts
+#| lst-cap: "Knitr options"
+
+base::options(knitr.kable.NA = "-")
+```
+
+{{< pagebreak >}}
+
+# Assignment Instructions
+
+You are to individually write a comprehensive and sophisticated critique and
+review of a scientific, peer-reviewed article of your choosing. This article
+should be an original, empirical study (i.e., not literature review or
+theoretical) somehow related to the field of psychology, and should use
+methodology you are at least somewhat familiar with from content in this course.
+
+You should be mindful to avoid biomedical clinical trial studies (like those
+that study prescription drugs) or papers that employ designs that are especially
+complex - as you likely won't have the knowledge (yet) to fully engage with this
+difficulty. I would also recommend you avoid animal research, as we have not
+placed a high emphasis on it this semester. Finally, you will also want to
+probably stick to quantitative research, rather than qualitative. I would
+encourage you to search for research in an area that is interesting to you,
+while also making sure that you can actually understand the writing.
+
+The core component of this project is all about interrogating the validity of
+some research claims, through the clues that we have discussed this semester.
+Think of our article discussions in class (primarily later in the semester). I
+want you to write about what went wrong and right in the study *and* make
+reasonable suggestion on how it may have been improved. The critique should be
+thorough and cover all relevant parts of the study.
+
+APA citations to other literature are not required for your critique, though you
+may find it helpful. Do be mindful that if you make a specific suggestion based
+off of another piece of literature you MUST cite it. When you make
+recommendations, they should be realistic and practical (i.e., not every study
+can be a simple random sampling, double-blind experiment).
+
+If you find you are struggling with writing this, remember GVSU has a fantastic
+writing center that can help you out. I am also available to answer questions if
+you have any.
+
+This project will consist of 3 parts:
+
+1. A submission of your article of interest and a brief summary of the study,
+   with the full-text PDF of the paper. You will be expected to independently
+find an article that interests you, using the literature review and searching
+techniques we discuss early in the semester. Please read through the entire
+article before submitting for approval to make sure you are comfortable with it.
+I will review and approve your article, before you begin writing, to ensure it
+is appropriate for this project. I will not allow changes to your paper topic
+after the deadline. This will be due by Oct 29. (5 pts)
+
+2. A submission of an early draft of your critique. I will expect that you have
+   accomplished at least outlining your ideas and general thoughts on the
+validity of the paper. I will give you feedback on this draft to make sure you
+are on the right track for the final work and submission. This will be due by
+Nov 12. (5 pts)
+
+3. A final submission of your complete critique. This should address all
+   components of the study and discuss the ramifications of both the good and
+bad methodological elements. This will be due by Dec 3. (40 pts)
+
+Please know that I will evaluate you critique based on your knowledge from this
+course - I understand that you will not likely understand all the decisions made
+by researchers, especially in areas like statistics. Just try your best to
+address the things you've learned in this course.
+
+# Guiding Questions
+
+I will provide a [Rubric] that outlines the amount of points for each concept
+that you are to address. Given that research methods are very heterogeneous
+across different papers, journals, and topics, there are no hard and fast rules
+for what must be included. However, I will provide some guiding questions to
+help you figure out what to write about. I also want to make sure you address
+each section of the paper. Please **DO NOT** just write responding in bullet
+points from these questions - I want to see your thoughtfulness and creativity
+as you navigate the paper:
+
+## Introduction / Literature Review
+
+- Does the paper cite other appropriate peer reviewed research in support of its
+claims?
+
+- Is there ample citation used to support any and all statements made? Does is
+seem like some statements are lacking supporting evidence?
+
+- Does the paper logically build well to the topic of the paper and establish
+context for the study well?
+
+- Is there a "gap" in the research that this study is well-suited to address?
+
+- Is there a clear research question and hypothesis made?
+
+- Within the hypothesis, what type of claims are the authors making?
+
+## Methods
+
+*In the context of this class, this is likely to be the most important area to
+focus on!*
+
+- What measures is the study using? Are these established measures in the field,
+or new tools made for this study? Is there any information provided to support
+the validity and reliability of the measures? I.e., what is the measurement
+reliability and measurement validity of this study?
+
+- Do the authors operationalize their research question well? i.e., are the
+methods well-suited to the question asked by the end of introduction, is it
+logical? I.e., what is the construct validity of this study?
+
+- Do they explain their sampling procedures and is this sampling representative
+of the population? I.e., what is the external validity of this study?
+
+- Do the authors give adequate explanation of any data processes (e.g., missing
+data, statistics, alpha for significance) that are used?
+
+## Results
+
+*Note: I know you all are not statisticians, just try your best for this
+portion*
+
+- Does the paper appear to report p-values/confidence intervals and effect
+sizes, and interpret them correctly (i.e., significant or not; small, medium,
+large effect)?
+
+- Does the paper report descriptive statistics on the sample? Does this seem
+like a representative sample based on those values?
+
+- Are the statistical tests presented in a logical order and supportive of the
+research question and methods used?
+
+- Are the statistics appropriate to the scale of measurement of the data (e.g.,
+interval, ratio, ordinal, categorical)?
+
+## Discussion
+
+- Are the final conclusions well-supported by the results and methods used? Is
+there strong, or only tentative, evidence for these statements?
+
+- Are any potential limitation of the study described and addressed? Do the
+authors provide any suggestions to address these limitations for future studies?
+Are there limitations that are not fully addressed or transparently reported by
+the researchers?
+
+- Do the authors provide any detail for directions in which future research
+could build from this work?
+
+# Rubric
+
+There is no word or page limit or minimum, but please make sure to include
+enough content to do justice to the article, while still being clear and
+concise. If you have concerns about your length, please reach out to me.
+
+| Points | Component                    |
+| ------ | ---------------------------- |
+| 5      | Topic Approval               |
+| 5      | Critique Draft               |
+| 5      | Final Draft - Writing Style  |
+| 10     | Final Draft - Introduction   |
+| 10     | Final Draft - Methods        |
+| 5      | Final Draft - Results        |
+| 10     | Final Draft - Discussion     |

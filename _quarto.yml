@@ -1,0 +1,17 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "PSY-300: Research Methods in Psychology"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Dashboard
+      - about.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true

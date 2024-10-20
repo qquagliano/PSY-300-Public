@@ -1,0 +1,91 @@
+title: "Chapter 6 Lecture - Surveys and Observational Designs"
+subtitle: "PSY-300: Research Methods in Psychology"
+author: "Quinton Quagliano, M.S."
+institute: "Grand Valley State University"
+# SECTION: RevealJS general opts
+# NOTE: Numbering and Sectioning
+slide-level: 2
+slide-number: true
+show-slide-number: all
+number-sections: true
+number-depth: 2
+# NOTE: Table-of-contents
+toc: true
+toc-depth: 1
+# NOTE: Rendering
+keep-md: true
+keep-ipynb: true
+embed-resources: true
+output-ext: html
+# NOTE: Navigation
+incremental: true
+navigation-mode: linear
+scrollable: true
+transition: slide
+progress: true
+touch: true
+keyboard: true
+mouse-wheel: false
+hide-inactive-cursor: true
+controls: true
+controls-layout: edges
+controls-tutorial: true
+controls-back-arrows: visible
+help: true
+# NOTE: Metadata
+pagetitle: "Chapter 6 Lecture - Surveys and Observational Designs"
+keywords:
+  - "Ethics"
+description-meta: "Chapter 6 Lecture - Surveys and Observational Designs"
+author-meta: "Quinton Quagliano, M.S."
+date-meta: today
+# NOTE: Slide Content
+smaller: false
+footer: "Chapter 6 Lecture - Surveys and Observational Designs || PSY-300: Research Methods in Psychology || Quinton Quagliano, M.S."
+preview-links: false
+link-external-newwindow: true
+slide-tone: false # Tone on slide change
+auto-stretch: false
+# NOTE: Code
+code-fold: show
+code-copy: true
+code-summary: "R Code"
+highlight-style: github-dark
+# NOTE: Plugins
+tts:
+  ttsOn: false # Disable automatic text-to-speech on start
+revealjs-plugins:
+  - verticator
+  - tts
+  - codefocus
+  - pointer
+# SECTION: RevealJS theme-specific opts
+format: 
+  revealjs:
+    # NOTE: Themeing
+    output-file: week_6_lecture_dark
+    theme: ./theme/gv_theme_dark.scss
+    css: ./theme/gv_style_dark.css
+    pointer:
+      color: white
+    logo: ./imgs/gvsu_markleft_white.png
+  # SECTION: Light Theme
+  revealjs+light:
+    # NOTE: Themeing
+    output-file: week_6_lecture_light
+    theme: ./theme/gv_theme_light.scss
+    css: ./theme/gv_style_light.css
+    pointer:
+      color: blue
+    logo: ./imgs/gvsu_markleft_2c.png
+# SECTION: Exec opts
+execute:
+  echo: true
+  warning: false
+  message: false
+  eval: true
+  output: true
+  cache: false
+  freeze: false
+# SECTION: Language opts
+lang: en-US

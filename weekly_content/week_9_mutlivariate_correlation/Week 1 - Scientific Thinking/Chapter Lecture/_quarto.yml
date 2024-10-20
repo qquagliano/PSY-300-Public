@@ -1,0 +1,73 @@
+title: "Chapter 1 Lecture - Scientific Thinking"
+subtitle: "PSY-300: Research Methods in Psychology"
+author: "Quinton Quagliano, M.S."
+# SECTION: PowerPoint opts
+format: 
+  revealjs:
+    # NOTE: Numbering and Sectioning
+    slide-level: 2
+    slide-number: true
+    show-slide-number: all
+    number-sections: true
+    number-depth: 2
+    # NOTE: Table-of-contents
+    toc: true
+    toc-depth: 1
+    # NOTE: Rendering
+    keep-md: true
+    keep-ipynb: true
+    embed-resources: true
+    # NOTE: Themeing
+    theme: ./theme/gv_theme.scss
+    css: ./theme/gv_style.css
+    # NOTE: Navigation
+    scrollable: true
+    transition: fade
+    progress: true
+    touch: true
+    keyboard: true
+    mouse-wheel: false
+    hide-inactive-cursor: true
+    controls: true
+    controls-layout: edges
+    controls-tutorial: true
+    controls-back-arrows: visible
+    help: true
+    # NOTE: Metadata
+    pagetitle: "Chapter 1 Lecture - Scientific Thinking"
+    keywords:
+      - "Scientific Thinking"
+    description-meta: "Chapter 1 Lecture"
+    author-meta: "Quinton Quagliano, M.S."
+    date-meta: today
+    # NOTE: Slide Content
+    smaller: true
+    footer: "Chapter 1 Lecture - Scientific Thinking || PSY-300: Research Methods in Psychology || Quinton Quagliano, M.S."
+    preview-links: true
+    logo: ./imgs/gvsu_markleft_2c.png
+  pptx: 
+    reference-doc: ./gv_template.pptx
+    slide-level: 2
+    toc: true
+    toc-depth: 1
+    number-sections: true
+    keep-md: true
+    keep-ipynb: true
+# SECTION: Exec opts
+execute:
+  echo: false
+  warning: false
+  message: false
+  eval: false
+  output: false
+  cache: false
+  freeze: false
+# SECTION: Language opts
+lang: en-US
+fontfamily: "Times New Roman"
+# SECTION: Metadata opts
+keywords:
+  - "placeholder"
+description: "placeholder"
+subject: "placeholder"
+category: "placeholder"
